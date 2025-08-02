@@ -6,7 +6,7 @@ CityWise is a modern web application that provides instant weather-based safety 
 
 ## 🚀 Live Demo
 
-[🔗 Visit CityWise (Coming Soon)]()
+[🔗 Visit CityWise](https://citywise.vercel.app/)
 
 ---
 
