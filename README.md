@@ -49,7 +49,7 @@ This app empowers users to make **informed lifestyle decisions** instantly, wher
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/citywise.git
+git clone https://github.com/MaestroOG/citywise.git
 cd citywise
 npm install
 npm run dev
