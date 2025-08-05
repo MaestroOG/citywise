@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Script from "next/script";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
   title: "CityWise | AI-Powered Weather & Lifestyle Tips",
@@ -31,15 +32,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`antialiased overflow-x-hidden`}
-      >
-        <Navbar />
-        {children}
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`antialiased overflow-x-hidden`}
+        >
+          <Navbar />
+          {children}
 
-        <Script src="https://js.puter.com/v2/" strategy="beforeInteractive" />
-      </body>
-    </html>
+          <Script src="https://js.puter.com/v2/" strategy="beforeInteractive" />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

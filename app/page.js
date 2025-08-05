@@ -5,10 +5,16 @@ import { getWeatherForCity, getCityImage, get7DayWeather, kelvinToCelsius } from
 import Image from "next/image"
 import SevenDayInfo from "@/components/SevenDayInfo"
 import LifestyleTips from "@/components/LifeStyleTips"
+import { currentUser } from "@clerk/nextjs/server"
+import { redirect } from "next/navigation"
 
 
 const Home = async ({ searchParams }) => {
+
   const city = searchParams.city || '';
+
+  const user = await currentUser()
+
 
 
   let weather;
@@ -17,6 +23,10 @@ const Home = async ({ searchParams }) => {
   let photo;
   let photoUrl;
 
+
+  if (!user) {
+    redirect('/sign-in')
+  }
 
   if (city) {
     weather = await getWeatherForCity(city);
